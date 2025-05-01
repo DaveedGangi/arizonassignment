@@ -1,0 +1,12 @@
+
+.footer-bg{
+    background-color: cornsilk;
+    color:brown;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    margin-top: 33px;
+    padding:16px;
+}

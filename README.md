@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+🛠️ Project Setup
+To get started with the application:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+bash
+Copy
+Edit
+git clone <your-repo-url>
+cd myapp
+npm install
+npm start
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+💡 Overview
+This assignment appeared to be a simple product listing and cart implementation. However, upon reviewing the provided API, I noticed that the product objects lacked a quantity field. To enable full cart functionality (such as increasing/decreasing quantity), I added a quantity property to each product manually after fetching the data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+🧠 My Approach
+🔄 State Management with React Context API
+To manage global cart state across multiple components, I used the React Context API.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Defined the cart state in the main parent component.
 
-### `npm run build`
+Used Context.Provider to pass the cart data and functions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Accessed it in child components using Context.Consumer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🛒 Cart Functionality
+Add to Cart:
+Checked if the product already exists in the cart. If not, added it with quantity: 1.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Increase Quantity:
+Located the product by ID in the cart list and incremented the quantity.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Decrease Quantity:
+Located the product by ID and decremented the quantity, ensuring it doesn't go below 1.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Remove from Cart:
+Filtered out the selected product from the cart array.
 
-## Learn More
+Update Cart State:
+All changes to cart were handled immutably and updated using setCartList.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+⚠️ Challenges Faced
+Initially overlooked the missing quantity field in API response.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After recognizing the issue, manually added a quantity: 1 field to each fetched product object.
 
-### Analyzing the Bundle Size
+Faced a layout bug on tablet devices where the footer shifted upward.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Solved it by refactoring the main container layout using Flexbox for consistent alignment.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+📦 Packages Used
+create-react-app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+react-router-dom@5.2.0
 
-### Deployment
+react-spinners – for loading indicators
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🎁 Features Implemented
+✅ Product listing with Add to Cart
+
+✅ Search functionality to filter products by title
+
+✅ Dark Mode / Light Mode toggle from the navbar
+
+✅ React Spinner loading indicator while fetching data
+
+✅ Empty State Handling
+
+Displayed a placeholder image when the cart or search result is empty
+
+
+
+✨ Additional Improvements
+While the core functionality was completed, I made the following enhancements:
+
+Responsive Design: Ensured layout is responsive on mobile and desktop. Footer now behaves correctly across screen sizes.
+
+UI Polish: Styled components for better user experience using custom CSS.
+
+
+
+🚀 Future Scope
+Given more time, I would:
+
+Integrate Next.js for better performance and server-side rendering.
+
+Implement User Authentication and Cart Persistence.
+
+Add Backend Integration for a complete e-commerce experience.
+
+
+
+🙌 Final Note
+This project was developed using:
+
+React for UI
+
+CSS for styling
+
+Context API for state management
+
+I look forward to the opportunity to build more advanced applications using Next.js and explore more full-stack features in future tasks.
+

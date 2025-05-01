@@ -1,0 +1,114 @@
+.each-product-image{
+    height:200px;
+    width:240px;
+   
+}
+
+.all-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+.all-products-dark{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: black;
+}
+.each-product{
+    height:400px;
+    width:300px;
+    box-shadow:4px 1px 5px 9px rgb(244, 244, 252);
+    padding:12px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    margin:22px;
+}
+
+.each-product-price{
+    color:rgb(236, 182, 111);
+    font-size: medium;
+}
+.each-product-title{
+    color:rgb(69, 103, 104);
+    font-size: large;
+}
+
+
+.search-input{
+    margin-bottom: 44px;
+    height:44px;
+    width:240px;
+    padding-left:4px;
+    border-radius: 7px;
+    border-style:outset;
+    font-size: larger;
+}
+.search-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-spinner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: darkturquoise;
+}
+.empty-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:500px;
+    
+}
+.empty-image-show{
+    width:500px;
+    height:479px;
+    object-fit: contain;
+}
+
+.add-to-cart-button{
+    background-color: gold;
+    color:aliceblue;
+    border-radius: 12px;
+    height:44px;
+    width:200px;
+    padding:4px;
+    border: 0px;
+    cursor: pointer;
+    font-size: larger;
+}
+.add-to-cart-button:hover{
+    color:aqua;
+    background-color: chartreuse;
+}
+
+
+@media (max-width:576px){
+
+    .all-products{
+       
+        justify-content: center;
+    }
+    .empty-image-show{
+        height:330px;
+        width:300px;
+    }
+  
+}
